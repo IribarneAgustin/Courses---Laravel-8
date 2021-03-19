@@ -89,6 +89,7 @@ class ArticleController extends Controller
         $article->name = $request->get('name');
         $article->description = $request->get('description');
         $article->categoryId = $request->get('categoryId');
+        
         if ($request->get('premium') != null)
             $article->premium = $request->get('premium');
         else {

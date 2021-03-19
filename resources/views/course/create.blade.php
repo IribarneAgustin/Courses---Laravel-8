@@ -27,21 +27,18 @@
         <input name="price" type="text" class="form-control" id="exampleInputPassword1" required>
     </div>
     <div class="form-group">
-        <label for="exampleInputPassword1">Link del meet</label>
-        <input name="link" type="text" class="form-control" id="exampleInputPassword1" required>
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Duracion aproximada</label>
-        <input name="duration" type="text" class="form-control" id="exampleInputPassword1" required>
-    </div>
-    <div class="form-group">
         <label for="exampleInputPassword1">Días y Horarios</label>
         <input name="schedule" type="text" class="form-control" id="exampleInputPassword1" required>
     </div>
 
     <div class="form-group">
-        <label for="exampleInputPassword1">Archivo complementario</label>
+        <label for="exampleInputPassword1">Link del almacenamiento de archivos (Google drive)</label>
         <input name="file" type="file" class="form-control" id="customFile" accept=""/>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Link para clases virtuales</label>
+        <input name="link" type="text" class="form-control" id="exampleInputPassword1" required>
     </div>
 
     <br>

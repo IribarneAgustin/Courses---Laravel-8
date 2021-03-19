@@ -3,7 +3,6 @@
 
 @section('contenido')
 
-
 <body id="page-top">
 
     <section class="page-section portfolio" id="portfolio">

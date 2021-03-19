@@ -63,7 +63,6 @@
             </div>
             <!-- Portfolio Grid Items-->
             <div class="row justify-content-center">
-
                 @foreach ($courses as $course)
 
                 <!-- Portfolio Item 1-->
@@ -74,7 +73,7 @@
                         </div>
                         <img src="{{$course->flyer}}" class="img-fluid" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title text-center">{{$course->name}}</h5>         
+                            <h5 class="card-title text-center">{{$course->name}}</h5>
                             <p class="card-text">{{$course->description}}</p>
                             <div class="text-center">
                                 <div class="btn btn-primary">
@@ -83,7 +82,7 @@
                                 <br>
                                 <small class="card-text">(La suscripción solo se cobra una única vez)</small>
                             </div>
-                        
+
                             <hr>
                             <div class="text-center">
                                 <b> Las clases se dictarán los {{$course->schedule}}</b>
@@ -226,7 +225,7 @@
                                             <div class="divider-custom-line"></div>
                                         </div>
                                         <!--Text-->
-                                        <div class="text-dark">• Al pagar una suscripción a un espacio de clases, usted tendrá acceso por vida al mismo</div>
+                                        <div class="text-dark">• Al pagar una suscripción a un espacio de clases, usted tendrá acceso de por vida al mismo</div>
                                         <div class="text-dark">• Las clases se dictarán periódicamente en los horarios indicados</div>
                                         <div class="text-dark">• Usted tendrá una constante devolución por parte del equipo docente</div>
                                         <div class="text-dark">• En cada espacio de clases, usted tendrá acceso a material descargable</div>
@@ -294,35 +293,17 @@
     </section>
     <!-- Footer-->
     <footer class="footer text-center">
-        <div class="container">
-            <div class="row">
-                <!-- Footer Location-->
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Location</h4>
-                    <p class="lead mb-0">
-                        2215 John Daniel Drive
-                        <br />
-                        Clark, MO 65243
-                    </p>
-                </div>
-                <!-- Footer Social Icons-->
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Around the Web</h4>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
-                </div>
-                <!-- Footer About Text-->
-                <div class="col-lg-4">
-                    <h4 class="text-uppercase mb-4">About Freelancer</h4>
-                    <p class="lead mb-0">
-                        Freelance is a free to use, MIT licensed Bootstrap theme created by
-                        <a href="http://startbootstrap.com">Start Bootstrap</a>
-                        .
-                    </p>
-                </div>
+        <div class="row justify-content-center">
+
+            <!-- Footer Social Icons-->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase mb-4">Seguinos por las redes!</h4>
+                <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+                <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
             </div>
+
         </div>
     </footer>
     <!-- Copyright Section-->

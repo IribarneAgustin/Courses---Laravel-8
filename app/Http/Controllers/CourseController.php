@@ -11,13 +11,18 @@ class CourseController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin');
+        $this->middleware('auth');
     }
 
     public function index()
     {
         $courses = Course::all();
         return view('course.index', ['courses' => $courses]);
+    }
+    public function inactiveCourses()
+    {
+        $courses = Course::all();
+        return view('course.inactiveCourses', ['courses' => $courses]);
     }
 
     public function create()
@@ -37,12 +42,12 @@ class CourseController extends Controller
         //Con este método cambio el nombre de la ruta para guardarla en mi base de datos correctamente.
         $url = Storage::url($img);
 
-        $course->file = 0;
+        $course->file = 0; //Link del drive
         $course->name = $request->get('name');
         $course->price = $request->get('price');
-        $course->link = $request->get('link');
+        $course->link = $request->get('link'); //Link del meet
         $course->description = $request->get('description');
-        $course->duration = $request->get('duration');
+        $course->duration = $request->get('duration'); //Borrar
         $course->schedule = $request->get('schedule');
         $course->flyer = $url;
         $course->isActive = true;
@@ -67,8 +72,21 @@ class CourseController extends Controller
         //
     }
 
+    public function activate(Request $r)
+    {
+        $course = Course::find($r->get('courseId'));
+        $course->isActive = 1;
+        $course->save();
+
+        return redirect('/courses')->with('activate', 'ok');
+    }
+
     public function destroy($id)
     {
-        //
+        $course = Course::find($id);
+        $course->isActive = 0;
+        $course->save();
+
+        return redirect('/courses')->with('delete', 'ok');
     }
 }

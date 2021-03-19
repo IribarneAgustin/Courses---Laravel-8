@@ -23,7 +23,7 @@
         </thead>
         <tbody>
             @foreach ($courses as $course)
-            @if ($course->isActive == 1)
+            @if ($course->isActive == 0)
             <tr>
                 <td> {{$course->id}} </td>
                 <td> {{$course->name}} </td>
@@ -32,14 +32,15 @@
                 <td> {{$course->price}} </td>
                 <td> {{$course->schedule}} </td>
                 <td>
-                    <form action="{{ route('courses.destroy',$course->id) }}" method="post" class="delete-form">
-                        <a href="/courses/{{$course->id}}/edit" style="width: 40%" class="btn btn-info">Editar</a>
+                    <form action="/activate" method="get" class="delete-form">
+                        <a href="/courses/{{$course->id}}/edit" style="width: 40%" class="btn btn-success">Editar</a>
                         @csrf
-                        @method('DELETE')
-                        <button type="submit" style="width: 40%" class="btn btn-danger">Desactivar</button>
+                        <input type="hidden" name="courseId" value="{{ $course->id }}">
+                        <button type="submit" class="btn btn-primary" style="width: 40%">
+                            Activar!</button>
                     </form>
-                </td>
 
+                </td>
             </tr>
             @endif
             @endforeach
@@ -69,7 +70,7 @@
     $('#courses').DataTable({
         "language": {
             "lengthMenu": "Mostrar _MENU_ registros por página",
-            "zeroRecords": "Nada encontrado - disuclpa",
+            "zeroRecords": "Nada encontrado",
             "info": "Mostrando la página _PAGE_ de _PAGES_",
             "infoEmpty": "No se encontró ningún registro",
             "infoFiltered": "(filtrado de _MAX_ registros totales)",
@@ -83,38 +84,18 @@
     });
 </script>
 
-
-@if(session('activate') == 'ok')
-<script>
-    Swal.fire(
-        'Clase activada',
-        'Cualquier usarió podrá registrarse en esta clase',
-        'success'
-    )
-</script>
-@endif
-
-@if(session('delete') == 'ok')
-<script>
-    Swal.fire(
-        'Clase desactivada',
-        'Nadie podrá ingresar a esta clase hasta que vuelva a activarse.',
-        'success'
-    )
-</script>
-@endif
 <script>
     $('.delete-form').submit(function(e) {
         e.preventDefault();
 
         Swal.fire({
-            title: '¿Desea desactivar esta clase?',
+            title: '¿Desea activar esta clase?',
             text: " ",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Desactivar',
+            confirmButtonText: 'Activar',
             cancelButtonText: 'Canelar'
         }).then((result) => {
             if (result.isConfirmed) {
