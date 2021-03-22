@@ -18,6 +18,8 @@
                 <th scope="col" style="width: 10%">Imagen</th>
                 <th scope="col" style="width: 10%">Precio</th>
                 <th scope="col" style="width: 10%">Dias y horarios</th>
+                <th scope="col" style="width: 10%">Link de clase virtual</th>
+                <th scope="col" style="width: 10%">Link de archivos</th>
                 <th scope="col" style="width: 20%"></th>
             </tr>
         </thead>
@@ -31,12 +33,14 @@
                 <td> <img src="{{asset($course->flyer)}}" width="100%" height="auto"></td>
                 <td> {{$course->price}} </td>
                 <td> {{$course->schedule}} </td>
+                <td> {{$course->link}} </td>
+                <td> {{$course->file}} </td>
                 <td>
                     <form action="/activate" method="get" class="delete-form">
-                        <a href="/courses/{{$course->id}}/edit" style="width: 40%" class="btn btn-success">Editar</a>
+                        <a href="/courses/{{$course->id}}/edit" style="width: 40%" class="btn btn-info">Editar</a>
                         @csrf
                         <input type="hidden" name="courseId" value="{{ $course->id }}">
-                        <button type="submit" class="btn btn-primary" style="width: 40%">
+                        <button type="submit" class="btn btn-success" style="width: 40%">
                             Activar!</button>
                     </form>
 

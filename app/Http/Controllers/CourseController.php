@@ -64,12 +64,36 @@ class CourseController extends Controller
 
     public function edit($id)
     {
-        //
+        $course = Course::find($id);
+
+        return view("course.edit",['course' => $course]);
+
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $course = Course::find($id);
+
+        if ($request->file('flyer') != null) {
+            $request->validate(
+                ['flyer' => 'required|image']
+            );
+
+            $img = $request->file('flyer')->store('public/images');
+            $url = Storage::url($img);
+            $course->flyer = $url;
+        }
+
+        $course->file = $request->get('file'); //Link del drive
+        $course->name = $request->get('name');
+        $course->price = $request->get('price');
+        $course->link = $request->get('link'); //Link del meet
+        $course->description = $request->get('description'); //Borrar
+        $course->schedule = $request->get('schedule');
+
+        $course->save();
+
+        return redirect("/courses");
     }
 
     public function activate(Request $r)

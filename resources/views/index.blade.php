@@ -115,7 +115,7 @@
                                             <!-- Portfolio Modal - Text-->
                                             <p class="mb-5"><b>Las clases se dictarán los {{$course->schedule}}</b></p>
                                             <p class="mb-5">{{$course->description}}</p>
-                                            <form action="/addStudent/" method="get">
+                                            <form action="/addStudent" method="get">
                                                 @csrf
                                                 <input type="hidden" name="courseId" value="{{ $course->id }}">
                                                 <button type="submit" class="btn btn-primary"> <i class="fas fa-shopping-cart"></i>

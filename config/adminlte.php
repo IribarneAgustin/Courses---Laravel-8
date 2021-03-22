@@ -258,7 +258,7 @@ return [
         ],
         [
             'text'        => 'Ver alumnos',
-            'url'         => '/repairs/listOnHold',
+            'url'         => '/students',
             'icon'        => 'fa fa-users',
             'label'       => '',
             'label_color' => '',
