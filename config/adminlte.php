@@ -187,7 +187,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => '/',
+    'dashboard_url' => '/courses',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -234,16 +234,23 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        ['header' => 'CURSOS'],
+        ['header' => 'CLASES'],
         [
-            'text'        => 'Mis cursos',
+            'text'        => 'Mis clases',
             'url'         => '/courses',
             'icon'        => 'fas fa-home',
             'label'       => '',
             'label_color' => '',
         ],
         [
-            'text'        => 'Agregar curso',
+            'text'        => 'Clases desactivadas',
+            'url'         => '/inactiveCourses',
+            'icon'        => 'fa fa-list',
+            'label'       => '',
+            'label_color' => '',
+        ],
+        [
+            'text'        => 'Agregar una clase',
             'url'         => '/courses/create',
             'icon'        => 'fa fa-plus',
             'label'       => '',
@@ -251,7 +258,7 @@ return [
         ],
         [
             'text'        => 'Ver alumnos',
-            'url'         => '/repairs/listOnHold',
+            'url'         => '/students',
             'icon'        => 'fa fa-users',
             'label'       => '',
             'label_color' => '',

@@ -20,7 +20,7 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::user()->isAdmin == 0) {
-            $courses = Course::all();
+            $courses = Course::all()->where('isActive', true);
             return view('index')->with("courses",$courses);
         } else {
             return redirect('/courses');
@@ -48,4 +48,6 @@ class HomeController extends Controller
         Mail::to("agusiri96@yahoo.com")->send($correo);
         return redirect('/')->with('message', 'Mensaje enviado');
     }
+
+    
 }
