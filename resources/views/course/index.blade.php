@@ -73,7 +73,7 @@
     $('#courses').DataTable({
         "language": {
             "lengthMenu": "Mostrar _MENU_ registros por página",
-            "zeroRecords": "Nada encontrado - disuclpa",
+            "zeroRecords": "Nada encontrado",
             "info": "Mostrando la página _PAGE_ de _PAGES_",
             "infoEmpty": "No se encontró ningún registro",
             "infoFiltered": "(filtrado de _MAX_ registros totales)",

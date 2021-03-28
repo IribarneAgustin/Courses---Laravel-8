@@ -3,7 +3,7 @@
 @section('title', 'Admin')
 
 @section('content_header')
-<h1>Agregar curso</h1>
+<h1>Agregar espacio de clases</h1>
 @stop
 
 @section('content')

@@ -26,7 +26,7 @@
                 <td> {{$student['user']->email}} </td>
                 <td>
                     @foreach ($student['courses'] as $courses )
-                    {{$courses->name }} <br>
+                    •{{$courses->name }} <br>
                     @endforeach
                 </td>
 
@@ -38,6 +38,32 @@
 
     </table>
 </div>
+@stop
 
+@section('css')
+<link rel="stylesheet" href="/css/admin_custom.css">
+<link href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+@stop
 
+@section('js')
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap5.min.js"></script>
+<script>
+    $('#students').DataTable({
+        "language": {
+            "lengthMenu": "Mostrar _MENU_ registros por página",
+            "zeroRecords": "Nada encontrado",
+            "info": "Mostrando la página _PAGE_ de _PAGES_",
+            "infoEmpty": "No se encontró ningún registro",
+            "infoFiltered": "(filtrado de _MAX_ registros totales)",
+            "search": "Buscar:",
+            "paginate": {
+                'next': "Siguiente",
+                'previous': "Anterior"
+            }
+        }
+
+    });
+</script>
 @stop
