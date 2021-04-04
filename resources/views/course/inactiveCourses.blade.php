@@ -3,7 +3,7 @@
 @section('title', 'Admin')
 
 @section('content_header')
-<h1>Mis Clases</h1>
+<h1>Clases desactivadas</h1>
 <br>
 @stop
 
