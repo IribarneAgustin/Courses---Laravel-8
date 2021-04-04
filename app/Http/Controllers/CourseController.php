@@ -42,12 +42,12 @@ class CourseController extends Controller
         //Con este método cambio el nombre de la ruta para guardarla en mi base de datos correctamente.
         $url = Storage::url($img);
 
-        $course->file = 0; //Link del drive
+        $course->file = $request->get('file'); //Link del drive
         $course->name = $request->get('name');
         $course->price = $request->get('price');
         $course->link = $request->get('link'); //Link del meet
         $course->description = $request->get('description');
-        $course->duration = $request->get('duration'); //Borrar
+        $course->duration = 1; //Borrar
         $course->schedule = $request->get('schedule');
         $course->flyer = $url;
         $course->isActive = true;

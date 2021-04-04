@@ -12,7 +12,7 @@
     @method('PUT')
     <div class="form-group">
         <label for="exampleInputEmail1">Nombre</label>
-        <input value="{{$course->id}}" name="name" type="text" class="form-control" id="exampleInputEmail1" required>
+        <input value="{{$course->name}}" name="name" type="text" class="form-control" id="exampleInputEmail1" required>
     </div>
 
     <div class="form-group">

@@ -8,12 +8,13 @@ use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\PaymentController;
 
 Route::get('/activate', [CourseController::class, 'activate'])->middleware('admin');
 Route::get('/inactiveCourses', [CourseController::class, 'inactiveCourses'])->middleware('admin');
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/logout', [HomeController::class, 'logout']);
-Route::get('/addStudent', [StudentController::class, 'addStudent']);
+//Route::get('/addStudent', [StudentController::class, 'addStudent']);
 Route::get('/myCourses', [StudentController::class, 'myCourses']);
 Route::get('/showClass', [ClassController::class, 'show']);
 Route::resource('courses', 'App\Http\Controllers\CourseController');
@@ -23,6 +24,8 @@ Route::get('/', function () {
     return view("auth.login");
 });
 
+Route::get('/paypal/pay',[PaymentController::class , 'payWithPayPal']);
+Route::get('/paypal/status',[PaymentController::class , 'payPalStatus']);
 
 
 
